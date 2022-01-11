@@ -1,3 +1,5 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
 body {
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
@@ -47,3 +49,5 @@ a {
 .link:hover {
   text-decoration: underline;
 }
+@tailwind components;
+@tailwind utilities;
