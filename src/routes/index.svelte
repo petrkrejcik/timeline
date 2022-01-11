@@ -8,7 +8,7 @@
   <li>
     <a class="card-link" rel="noopener" href="/portfolio">
       <h2>Portfolio</h2>
-      <p>{new Date('11/01/2020').toLocaleString()}</p>
+      <p>{new Date().toLocaleString()}</p>
     </a>
   </li>
 </ul>
