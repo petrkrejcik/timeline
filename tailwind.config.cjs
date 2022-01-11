@@ -1,11 +1,8 @@
-const config = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-
+module.exports = {
+  mode: 'jit',
+  purge: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    extend: {},
   },
-
-  plugins: []
-};
-
-module.exports = config;
+  plugins: [require('daisyui'), require('@tailwindcss/typography')],
+}

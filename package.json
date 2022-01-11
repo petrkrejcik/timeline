@@ -9,7 +9,9 @@
   "devDependencies": {
     "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "next",
+    "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
+    "daisyui": "^1.22.0",
     "graphql": "^16.2.0",
     "graphql-request": "^3.7.0",
     "postcss": "^8.4.5",
