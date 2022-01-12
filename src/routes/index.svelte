@@ -37,7 +37,7 @@
 
 <div class="w-full flex justify-center items-center mb-4">
   <img
-    src="../../static/profile-foto.jpg"
+    src="/static/profile-foto.jpg"
     class="mask mask-squircle"
     alt=""
     height="200"
