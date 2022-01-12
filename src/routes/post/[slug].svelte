@@ -11,6 +11,7 @@
         post(where: { slug: $slug }) {
           title
           date
+          excerpt
           content {
             html
           }
@@ -39,6 +40,7 @@
 
 <script>
   import { formatDate } from '$lib/date';
+  import './[slug].css';
 
   export let post;
 </script>
@@ -52,11 +54,11 @@
     <h1 class="text-4xl">{post.title}</h1>
     <p class="mb-3 text-base text-yellow-300">
       {formatDate(new Date(post.date), [
-        { day: 'numeric' },
         { month: 'short' },
         { year: 'numeric' }
       ])}
     </p>
+    <p class="text-slate-400 italic">{post.excerpt}</p>
     {@html post.content.html}
   </article>
 </div>
