@@ -38,6 +38,8 @@
 </script>
 
 <script>
+  import { formatDate } from '$lib/date';
+
   export let post;
 </script>
 
@@ -45,8 +47,16 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
-<p>{post.author.name}</p>
-<p>{post.date}</p>
-<p>{post.tags}</p>
-{@html post.content.html}
+<div class="container mx-auto">
+  <article class="flex flex-col justify-center ">
+    <h1 class="text-4xl">{post.title}</h1>
+    <p class="mb-3 text-base text-yellow-300">
+      {formatDate(new Date(post.date), [
+        { day: 'numeric' },
+        { month: 'short' },
+        { year: 'numeric' }
+      ])}
+    </p>
+    {@html post.content.html}
+  </article>
+</div>

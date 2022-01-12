@@ -30,15 +30,26 @@
 </script>
 
 <script>
+  import { formatDate } from '$lib/date';
+
   export let posts;
 </script>
 
-<!-- <div class="w-full flex justify-center">
-  <h1>Hi, I'm Petr</h1>
-  <p>I'm a developer and this is what I've done.</p>
-</div> -->
-<div class="container mx-auto flex flex-col items-start md:flex-row">
-  <div class="ml-0 md:ml-12 lg:w-2/3 sticky">
+<div class="w-full flex justify-center items-center mb-4">
+  <img
+    src="../../static/profile-foto.jpg"
+    class="mask mask-squircle"
+    alt=""
+    height="200"
+    width="200"
+  />
+  <div class="">
+    <h1 class="text-4xl">Hi, I'm Petr</h1>
+    <p>I'm a developer and this is what I've done.</p>
+  </div>
+</div>
+<div class="container mx-auto flex justify-center">
+  <div class="ml-0 lg:w-2/3 sticky">
     <div class="container mx-auto w-full h-full">
       <div class="relative wrap overflow-hidden h-full">
         <div
@@ -63,7 +74,13 @@
                   ? 'text-right'
                   : 'text-left'}"
               >
-                <p class="mb-3 text-base text-yellow-300">1-6 May, 2021</p>
+                <p class="mb-3 text-base text-yellow-300">
+                  {formatDate(new Date(post.date), [
+                    { day: 'numeric' },
+                    { month: 'short' },
+                    { year: 'numeric' }
+                  ])}
+                </p>
                 <h4 class="mb-3 font-bold text-lg md:text-2xl">
                   {post.title}
                 </h4>
@@ -77,10 +94,10 @@
           </a>
         {/each}
       </div>
-      <img
+      <!-- <img
         class="mx-auto -mt-36 md:-mt-36"
         src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
-      />
+      /> -->
     </div>
   </div>
 </div>
