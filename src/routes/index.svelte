@@ -15,6 +15,9 @@
           slug
           date
           excerpt
+          coverImage {
+            url
+          }
         }
       }
     `;
@@ -71,11 +74,11 @@
       <div class="relative wrap overflow-hidden h-full">
         <div
           class="border-2-2 border-yellow-555 absolute h-full border"
-          style="right: 50%; border: 2px solid #FFC100; border-radius: 1%;"
+          style="right: 50%; border: 1px solid #FFC100; border-radius: 1%;"
         />
         <div
           class="border-2-2 border-yellow-555 absolute h-full border"
-          style="left: 50%; border: 2px solid #FFC100; border-radius: 1%;"
+          style="left: 50%; border: 1px solid #FFC100; border-radius: 1%;"
         />
 
         {#each posts as post, i}
@@ -105,6 +108,9 @@
                 >
                   {post.excerpt}
                 </p>
+                {#if post.coverImage}
+                  <img src={post.coverImage.url} alt={post.title} />
+                {/if}
               </div>
             </div>
           </a>
