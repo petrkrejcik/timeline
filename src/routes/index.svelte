@@ -109,7 +109,11 @@
                   {post.excerpt}
                 </p>
                 {#if post.coverImage}
-                  <img src={post.coverImage.url} alt={post.title} />
+                  <img
+                    src={post.coverImage.url}
+                    alt={post.title}
+                    class="max-h-96 mt-6 {i % 2 === 0 ? 'ml-auto' : 'mr-auto'}"
+                  />
                 {/if}
               </div>
             </div>
