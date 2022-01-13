@@ -25,7 +25,7 @@
     `;
 
     const variables = {
-      slug: context.page.params.slug
+      slug: context.params.slug
     };
 
     const { post } = await graphcms.request(query, variables);
@@ -49,16 +49,16 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<div class="container mx-auto">
-  <article class="flex flex-col justify-center ">
-    <h1 class="text-4xl">{post.title}</h1>
-    <p class="mb-3 text-base text-yellow-300">
+<div class="container mx-auto px-4">
+  <article class="flex flex-col justify-center prose">
+    <h1>{post.title}</h1>
+    <p class="text-yellow-300 mt-0 mb-4">
       {formatDate(new Date(post.date), [
         { month: 'short' },
         { year: 'numeric' }
       ])}
     </p>
-    <p class="text-slate-400 italic">{post.excerpt}</p>
+    <p class="text-slate-400 italic my-0">{post.excerpt}</p>
     {@html post.content.html}
   </article>
 </div>

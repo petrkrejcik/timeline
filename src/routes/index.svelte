@@ -47,7 +47,9 @@
     width="200"
   />
   <div class="">
-    <h1 class="text-4xl">Hi, I'm <span class="text-yellow-300">Petr</span>.</h1>
+    <h1 class="text-4xl mb-2">
+      Hi, I'm <span class="text-yellow-300">Petr</span>.
+    </h1>
     <p>I'm a developer and this is what I've done.</p>
     <a
       href="https://www.linkedin.com/in/petrkrejcik"
@@ -82,18 +84,24 @@
         />
 
         {#each posts as post, i}
-          <a href="/post/{post.slug}" style="block">
+          <div
+            class="mb-8 flex justify-between w-full items-center {i % 2 === 0
+              ? 'flex-row-reverse left-timeline'
+              : 'right-timeline'} "
+          >
+            <div class="order-1 w-5/12" />
             <div
-              class="mb-8 flex justify-between w-full items-center {i % 2 === 0
-                ? 'flex-row-reverse left-timeline'
-                : 'right-timeline'} "
+              class="order-1 border-2-2 border-yellow-555  w-1/12 border"
+              style="border: 1px solid #FFC100; border-radius: 1%; {i % 2 === 0
+                ? 'margin-right: 9%;'
+                : 'margin-left: 9%;'}"
+            />
+            <a
+              href="/post/{post.slug}"
+              style="block"
+              class="order-1 w-5/12 hover:bg-gray-900 transition-all duration-100 p-2 rounded-md"
             >
-              <div class="order-1 w-5/12" />
-              <div
-                class="order-1 w-5/12 px-1 py-4 {i % 2 === 0
-                  ? 'text-right'
-                  : 'text-left'}"
-              >
+              <div class="px-1 py-4 {i % 2 === 0 ? 'text-right' : 'text-left'}">
                 <p class="mb-3 text-base text-yellow-300">
                   {formatDate(new Date(post.date), [
                     { month: 'short' },
@@ -116,8 +124,8 @@
                   />
                 {/if}
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         {/each}
       </div>
       <!-- <img
